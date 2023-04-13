@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-weight: 400; }
+
+body {
+  background: #343541; }
+
+.app {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: 100vh; }
+  @media only screen and (max-width: 37.5em) {
+    .app {
+      grid-template-columns: 100vw;
+      grid-template-rows: 4rem calc(100vh - 4rem); } }
+
+.chat {
+  position: relative;
+  background-color: #343541; }
+  .chat__form {
+    display: block;
+    background: linear-gradient(to top, #343541 55%, transparent);
+    height: 10rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0; }
+  .chat--input {
+    display: block;
+    width: 76rem;
+    margin-top: 1rem;
+    background-color: #40414f;
+    height: 2.6rem;
+    margin-inline: auto;
+    border-radius: 0.6rem;
+    border: 1px solid #202128;
+    outline: none;
+    padding: 2.2rem 1.5rem;
+    font-size: 1.6rem;
+    color: #fff;
+    background-image: url("../assets/send.svg");
+    background-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: 98%; }
+    @media only screen and (max-width: 62.5em) {
+      .chat--input {
+        width: 87%; } }
+
+.list {
+  list-style: none;
+  overflow-y: scroll;
+  height: 100%; }
+  .list__item {
+    padding: 2.8rem 0;
+    width: 100%;
+    margin-inline: auto;
+    font-size: 1.6rem;
+    color: #fff; }
+    .list__item[data-index="gpt"], .list__item[data-index="thinking"] {
+      background-color: #40414f;
+      min-height: 8rem; }
+    .list__item:last-child {
+      margin-bottom: 17rem; }
+  .list__content {
+    width: 76rem;
+    margin-inline: auto;
+    position: relative; }
+    .list__content-icon {
+      position: absolute;
+      top: -0.6rem;
+      left: -5rem;
+      width: 2.6rem;
+      height: 2.6rem; }
+    @media only screen and (max-width: 62.5em) {
+      .list__content {
+        width: 85%; } }
+
+.sidebar {
+  background-color: #202128; }

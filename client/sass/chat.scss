@@ -1,0 +1,85 @@
+.chat {
+  position: relative;
+  background-color: $color-primary;
+
+  &__form {
+    display: block;
+    background: linear-gradient(to top, $color-primary 55%, transparent);
+    height: 10rem;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &--input {
+    display: block;
+    width: 76rem;
+    margin-top: 1rem;
+    background-color: $color-primary-light;
+    height: 2.6rem;
+    margin-inline: auto;
+    border-radius: 0.6rem;
+    border: 1px solid $color-primary-dark;
+    outline: none;
+    padding: 2.2rem 1.5rem;
+    font-size: $font-size--primary;
+    color: #fff;
+
+    background-image: url("../assets/send.svg");
+    background-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: 98%;
+
+    @media only screen and(max-width: $bp-large) {
+      width: 87%;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  overflow-y: scroll;
+  height: 100%;
+
+  &__item {
+    padding: 2.8rem 0;
+    width: 100%;
+    margin-inline: auto;
+    font-size: $font-size--primary;
+    color: #fff;
+
+    // &[data-index="user"] {
+    //   background-color: red;
+    // }
+
+    &[data-index="gpt"],
+    &[data-index="thinking"] {
+      background-color: $color-primary-light;
+      min-height: 8rem;
+    }
+
+    &:last-child {
+      margin-bottom: 17rem;
+    }
+  }
+
+  &__content {
+    width: 76rem;
+    margin-inline: auto;
+    position: relative;
+
+    &-icon {
+      position: absolute;
+      top: -0.6rem;
+      left: -5rem;
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
+    @media only screen and(max-width: $bp-large) {
+      width: 85%;
+    }
+  }
+}

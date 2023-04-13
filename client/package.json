@@ -1,0 +1,19 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "node-sass": "^8.0.0",
+    "parallel": "^1.2.0",
+    "vite": "^4.2.0"
+  }
+}
