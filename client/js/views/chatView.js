@@ -4,11 +4,11 @@ class ChatView {
   // An element which, after thinking by the AI, shows the answer, and thinking and showing the answer is used with this element
   thinkingLi;
   constructor() {
-    this.form = document.querySelector("form");
+    this.form = document.querySelector(".chat__form");
     this.listView = document.querySelector(".list");
   }
 
-  renderBotResponse(parsedData, dataIndex = "gpt") {
+  async renderBotResponse(parsedData, dataIndex = "gpt") {
     this.thinkingLi = Array.from(this.listView.children).pop();
     if (dataIndex === "thinking" || dataIndex === "user") {
       const html = `
@@ -24,29 +24,35 @@ class ChatView {
       // Change index from last li element "thinking" to "gpt"
       this.thinkingLi.dataset.index = "gpt";
       this.thinkingLi.querySelector("p").textContent = "";
-      this.setIntervalText(parsedData);
+      await this.setIntervalText(parsedData);
     }
   }
 
   // Displaying text letter by letter
   setIntervalText(parsedData) {
     let index = 0;
-    const intervalId = setInterval(() => {
-      if (index < parsedData.length) {
-        const letter = parsedData.charAt(index);
-        this.thinkingLi.querySelector("p").textContent += letter;
-        index++;
-        helpers.scrollTop(this.listView);
-      } else {
-        console.log(this);
-        clearInterval(intervalId);
-      }
-    }, 13);
+    return new Promise((resolve, reject) => {
+      const intervalId = setInterval(() => {
+        if (index < parsedData.length) {
+          const letter = parsedData.charAt(index);
+          this.thinkingLi.querySelector("p").textContent += letter;
+          index++;
+          helpers.scrollTop(this.listView);
+        } else {
+          clearInterval(intervalId);
+          resolve();
+        }
+      }, 13);
+    });
   }
 
   loadingBotResponse(counter) {
     Array.from(this.listView.children).pop().querySelector("p").innerHTML =
       ".".repeat(counter);
+  }
+
+  clearInput() {
+    this.form.querySelector(".chat__input").value = "";
   }
 
   alertError(err) {
