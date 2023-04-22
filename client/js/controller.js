@@ -43,3 +43,11 @@ form.addEventListener("submit", handleSubmit);
 form.querySelector("#input-icon").addEventListener("click", handleSubmit);
 
 window.addEventListener("load", helpers.scrollTop(listView));
+
+document
+  .querySelector(".login")
+  .addEventListener("click", model.signInWithGoogle);
+
+if (module.hot) {
+  module.hot.accept();
+}
