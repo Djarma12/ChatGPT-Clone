@@ -48,7 +48,7 @@
     outline: none;
     padding: 2.2rem 1.5rem;
     font-size: $font-size--primary;
-    color: #fff;
+    color: $font-color;
   }
 
   &__icon {
@@ -88,7 +88,7 @@
     width: 100%;
     margin-inline: auto;
     font-size: $font-size--primary;
-    color: #fff;
+    color: $font-color;
 
     // &[data-index="user"] {
     //   background-color: red;
