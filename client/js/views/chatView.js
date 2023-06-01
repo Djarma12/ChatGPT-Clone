@@ -8,9 +8,18 @@ class ChatView {
     this.listView = document.querySelector(".list");
   }
 
+  clearChat() {
+    console.log(this.listView);
+    this.listView.innerHTML = "";
+  }
+
   async renderBotResponse(parsedData, dataIndex = "gpt") {
     this.thinkingLi = Array.from(this.listView.children).pop();
-    if (dataIndex === "thinking" || dataIndex === "user") {
+    if (
+      dataIndex === "thinking" ||
+      dataIndex === "user" ||
+      dataIndex === "parsedData"
+    ) {
       const html = `
         <li class="list__item" data-index=${dataIndex}>
           <div class="list__content">
@@ -20,6 +29,7 @@ class ChatView {
           </div>
         </li>`;
       this.listView.insertAdjacentHTML("beforeend", html);
+      helpers.scrollTop(this.listView);
     } else {
       // Change index from last li element "thinking" to "gpt"
       this.thinkingLi.dataset.index = "gpt";
