@@ -17,7 +17,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 25rem 1fr;
   grid-template-rows: 100vh; }
   @media only screen and (max-width: 37.5em) {
     .app {
@@ -118,4 +118,90 @@ body {
         width: 65%; } }
 
 .sidebar {
-  background-color: #202128; }
+  background-color: #202128;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .sidebar__login {
+    cursor: pointer;
+    display: block;
+    background-color: rgba(64, 65, 79, 0.36);
+    padding: 1.2rem 1.4rem 1.2rem 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+    width: 97%;
+    margin-inline: auto;
+    border: 1px solid #40414f;
+    transition: all 0.1s;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem; }
+    .sidebar__login:hover {
+      background-color: #40414f; }
+
+.form {
+  width: 100%;
+  height: 60%;
+  padding-block: 1.8rem; }
+  .form__list {
+    height: 85%;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    transition: all 0.3s; }
+    .form__list::-webkit-scrollbar {
+      width: 1.2rem; }
+    .form__list::-webkit-scrollbar-thumb {
+      border-radius: 3rem;
+      background-color: transparent; }
+    .form__list:hover::-webkit-scrollbar-thumb {
+      background-color: #40414f; }
+  .form__item {
+    cursor: pointer;
+    height: 5rem;
+    margin-left: 1rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center; }
+    .form__item:hover {
+      background-color: #343541; }
+  .form__radio {
+    display: none; }
+  .form__label {
+    cursor: pointer;
+    display: block;
+    padding: 1.2rem 1.4rem 1.2rem 2rem;
+    height: 100%;
+    font-size: 1.6rem;
+    color: #fff;
+    width: 97%;
+    margin-inline: auto;
+    transition: all 0.1s;
+    border: 1px solid transparent; }
+    .form__label--newchat {
+      border-color: #40414f;
+      border-radius: 0.8rem;
+      margin-bottom: 2rem;
+      height: auto;
+      padding: 1.2rem 1.4rem 1.2rem 2rem; }
+  .form__delete {
+    cursor: pointer;
+    background-color: transparent;
+    width: 3rem;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    border: none;
+    padding-right: 0.3rem; }
+    .form__delete-icon {
+      width: 100%;
+      height: 3rem;
+      border-radius: 0.5rem;
+      transition: all 0.1s; }
+      .form__delete-icon:hover {
+        transform: scale(0.9); }
+  .form__radio:checked + .form__label + .form__delete {
+    opacity: 1;
+    background-color: rgba(64, 65, 79, 0.36);
+    visibility: visible; }
+  .form__radio:checked + .form__label {
+    background-color: rgba(64, 65, 79, 0.36); }
