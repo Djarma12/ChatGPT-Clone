@@ -10,7 +10,18 @@
   <body>
     <main class="app">
       <div class="sidebar">
-        <button class="login">Log in</button>
+        <form class="form">
+          <input class="form__radio" type="radio" name="option" id="newchat" checked>
+          <label class="form__label form__label--newchat" for="newchat">New chat</label>
+          <ul class="form__list">
+            <!-- <li class="form__item">
+              <input class="form__radio" type="radio" name="option" id="1111111111">
+              <label class="form__label" for="option1">Option 1</label>
+            </li>
+            -->
+          </ul>
+        </form>
+        <button class="sidebar__login">Log in</button>
       </div>
       <div class="chat">
         <ul class="list"></ul>
