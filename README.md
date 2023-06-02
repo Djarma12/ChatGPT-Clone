@@ -1,5 +1,7 @@
 # Chat GPT Clone
 
+![ChatGptImage](https://github.com/Djarma12/ChatGPT-Clone/assets/112414082/0ce9eab6-029f-42af-9ca5-26c43c5abf58)
+
 Chat GPT application with user data storage.
 
 You can view the project live here:
