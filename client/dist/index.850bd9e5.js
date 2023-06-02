@@ -566,7 +566,6 @@ var _chatViewJsDefault = parcelHelpers.interopDefault(_chatViewJs);
 var _dbViewJs = require("./views/dbView.js");
 var _dbViewJsDefault = parcelHelpers.interopDefault(_dbViewJs);
 var _auth = require("firebase/auth");
-// model.getBotResponse("prompt");
 const formChat = (0, _chatViewJsDefault.default).form;
 const listView = (0, _chatViewJsDefault.default).listView;
 let isSubmitting = false; // With this variable we disable sending a prompt to the server until the response is completed
@@ -664,7 +663,7 @@ document.querySelector(".form__list").addEventListener("click", async (e)=>{
     }
 });
 
-},{"./model.js":"Py0LO","./helpers.js":"6s1be","./views/chatView.js":"dovey","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/auth":"79vzg","./views/dbView.js":"1fPKs"}],"Py0LO":[function(require,module,exports) {
+},{"./model.js":"Py0LO","./helpers.js":"6s1be","./views/chatView.js":"dovey","./views/dbView.js":"1fPKs","firebase/auth":"79vzg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Py0LO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getBotResponse", ()=>getBotResponse);

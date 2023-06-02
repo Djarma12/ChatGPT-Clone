@@ -4,9 +4,6 @@ import * as helpers from "./helpers.js";
 import ChatView from "./views/chatView.js";
 import DbView from "./views/dbView.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import chatView from "./views/chatView.js";
-
-// model.getBotResponse("prompt");
 
 const formChat = ChatView.form;
 const listView = ChatView.listView;
@@ -90,8 +87,8 @@ const handleActivePosts = async function (id) {
   await userFB.getData(id);
   ChatView.clearChat();
   userFB.dataSinglePost.forEach((obj) => {
-    chatView.renderBotResponse(obj.prompt, "user");
-    chatView.renderBotResponse(obj.parsedData, "parsedData");
+    ChatView.renderBotResponse(obj.prompt, "user");
+    ChatView.renderBotResponse(obj.parsedData, "parsedData");
   });
 };
 
