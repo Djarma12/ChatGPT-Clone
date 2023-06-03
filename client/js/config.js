@@ -1,2 +1,2 @@
-export const API_URL = "http://localhost:5000";
+export const API_URL = "https://chatgpt-clone-jrmg.onrender.com/";
 export const TIMEOUT_SEC = 13;
