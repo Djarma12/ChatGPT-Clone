@@ -833,7 +833,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_URL", ()=>API_URL);
 parcelHelpers.export(exports, "TIMEOUT_SEC", ()=>TIMEOUT_SEC);
-const API_URL = "http://localhost:5000";
+const API_URL = "https://chatgpt-clone-jrmg.onrender.com/";
 const TIMEOUT_SEC = 13;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -9991,8 +9991,8 @@ parcelHelpers.export(exports, "validateCallback", ()=>validateCallback);
 parcelHelpers.export(exports, "validateContextObject", ()=>validateContextObject);
 parcelHelpers.export(exports, "validateIndexedDBOpenable", ()=>validateIndexedDBOpenable);
 parcelHelpers.export(exports, "validateNamespace", ()=>validateNamespace);
-var global = arguments[3];
 var process = require("1bff41a0b4a5bd44");
+var global = arguments[3];
 const CONSTANTS = {
     /**
      * @define {boolean} Whether this is the client Node.js SDK.
